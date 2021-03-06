@@ -1,0 +1,144 @@
+.wrap-input {
+    width: 100%;
+    position: relative;
+    border-bottom: 1px solid #e4ff99;
+    padding: 15px 0;
+}
+.wrap-btn {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+.wrap-btn2 {
+    display: inline-block;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+.btn {
+	border: none;
+    background: transparent;
+    font-size: 15px;
+    color: #fff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    line-height: 1.2;
+    margin-right: 3px;
+    margin-bottom: 3px;
+    display:inline-block;
+    justify-content: center;
+    align-items:center ;
+    padding: 0px;
+    min-width: 160px;
+    height: 42px;
+    border-radius: 6px;
+    background-color: #cefa2f;
+    position: relative;
+    z-index: 1;
+ }
+ .btn:hover {
+    cursor: pointer;
+    opacity: 0.5;
+ }
+button {
+	border: none;
+    background: transparent;
+    font-size: 15px;
+    color: #fff;
+    line-height: 1.2;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    min-width: 160px;
+    height: 42px;
+    border-radius: 21px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    background: #cefa2f;
+    position: relative;
+    z-index: 1;
+ }
+ button:hover {
+    cursor: pointer;
+    opacity: 0.5;
+ }
+ .procont {
+    
+    width: 100%;  
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+
+    margin: 0em;
+    position: relative;
+}
+.cont2{
+    padding: 3px;
+
+    position: static;
+    float: left;  
+}
+.limiter {
+    width: 100%;
+    margin: 0 auto;
+    background-image: url('/assets/slike/login.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.wrap{
+    width: 390px;
+  border-radius: 10px;
+  overflow: hidden;
+
+  background: transparent;  
+}
+.pro-form {
+    width: 100%;
+    border-radius: 10px;
+    background-color: #dcff5ff3;
+    backface-visibility: visible ;
+}
+.labdes {
+    margin: 0;
+    display: block;
+    color:rgb(181, 206, 91);
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+input {
+	outline: none;
+    border: none;
+    font-size: 12px;
+    color: #555555;
+    line-height: 0.5;
+  
+    display: block;
+    width: 100%;
+    height: 18px;
+    background: transparent;
+    padding: 0 10px 0 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+.form-title {
+    font-size: 28px;
+    color: #778547f3;
+    line-height: 1.2;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+    display: block;
+}
+* {
+	margin: 0px; 
+	padding: 0px; 
+	box-sizing: border-box;
+}

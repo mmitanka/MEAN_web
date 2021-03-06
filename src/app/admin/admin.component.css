@@ -1,0 +1,226 @@
+.wrap-btn {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding-top: 3px;
+    
+}
+hr {
+
+    border: 0.5px solid #1baa6f;
+    margin-bottom: 24px;
+  }
+h3{
+    padding-top: 8px;
+  margin-left: 30px;
+  color:rgb(20, 139, 20);
+  font-family: cursive;
+}
+  
+  .menubutton {
+    outline: none;
+	border: none;
+    background: transparent;
+    font-size: 18px;
+    color: #fff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    line-height: 1.2;
+    margin-right: 3px;
+    margin-bottom: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    min-width: 160px;
+    height: 42px;
+    border-radius: 6px;
+    background-color: #cefa2f;
+    position: relative;
+    z-index: 1;
+ }
+ .menubutton:hover {
+    cursor: pointer;
+    opacity: 0.5;
+ }
+.tickbtn {
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    color: #fff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    line-height: 1.2;
+    margin-right: 3px;
+    margin-bottom: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    height: 30px;
+    width: 30px;
+    border-radius: 6px;
+    background-color: #cefa2f;
+    background-image: url('/assets/slike/thick.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    position: relative;
+    z-index: 1;
+}
+.tickbtn:hover {
+    cursor: pointer;
+    opacity: 0.5; 
+}
+.wrap-tick-btn {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%; 
+}
+.xbtn {
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    color: #fff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    line-height: 1.2;
+    margin-right: 3px;
+    margin-bottom: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    height: 30px;
+    width: 30px;
+    border-radius: 6px;
+    background-color: #cefa2f;
+    background-image: url('/assets/slike/x.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    position: relative;
+    z-index: 1;
+}
+.xbtn:hover {
+    cursor: pointer;
+    opacity: 0.5; 
+}
+.wrap-x-btn {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%; 
+}
+
+button:in-range{
+    outline: none;
+    border: none;
+}
+
+.table {
+
+    font-size: 14px;
+    margin-left: 20px;
+    padding-bottom: 0px;
+    opacity: 0.8;
+    border-radius: 20px;
+    
+}
+
+.table .bravo {
+    background-color:#83ff64 ;
+    border-color: #a7fd92;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.table thead {
+    color: rgb(24, 153, 24);
+    
+} 
+
+.admin-form{
+    width: 100%;
+    border-radius: 10px;
+    background-color: #dcff5ff3;
+    backface-visibility: visible ;
+}
+
+.limiter {
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+input {
+	outline: none;
+    border: none;
+    font-size: 15px;
+    color: #555555;
+    line-height: 1.0;
+    text-align: center;
+    display: block;
+    width: 100%;
+    height: 18px;
+    background: transparent;
+    padding: 0 10px 0 0px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+.labdes {
+    margin: 0;
+    display: block;
+    color:rgb(181, 206, 91);
+    text-align: center;
+    font-size: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+.wrap{
+    width: 390px;
+  border-radius: 10px;
+  overflow: hidden;
+
+  background: transparent;  
+}
+.form-title {
+    font-size: 28px;
+    color: #d6ff41f3;
+    line-height: 1.2;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+    display: block;
+}
+.wrap-input {
+    width: 100%;
+    position: relative;
+    border-bottom: 1px solid #e4ff99;
+    padding: 20px 0;
+}
+input:focus  {
+    background-color: #dcff5ff3;
+    
+ }
+ .acont{
+    width: 100%;  
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    
+    margin: 0em;
+    position: relative;
+ }
+ .lim-img-back {
+    width: 100%;
+    margin: 0 auto;
+    width: 100%;
+    min-height: 100vh;
+    opacity: 0.9;
+    background-image: url('/assets/slike/fazan.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+  }

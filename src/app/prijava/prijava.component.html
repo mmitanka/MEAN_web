@@ -1,0 +1,27 @@
+
+
+<div class="limiter">
+    <div class="logcont">
+        <div class="wrap">
+            <span class="form-title">
+                Prijava
+            </span>
+            <form name="form1" class="login-form"> 
+                <div class="wrap-input">
+                    <label class="labdes" for="korime">Korisnicko ime</label>
+                    <input type="text" name='korime'
+                    [(ngModel)]='korime' placeholder="Unesite korisnicko ime">
+                </div>
+                <div class="wrap-input">
+                    <label class="labdes" for="lozinka">Lozinka</label>
+                    <input type="password" name='lozinka'
+                    [(ngModel)]='lozinka' placeholder="Unesite lozinku">
+                </div>
+                <div class="wrap-btn">
+                    <button (click)='prijava()'>Prijavi se</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

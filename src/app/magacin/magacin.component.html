@@ -1,0 +1,60 @@
+<div class="lim-img-back">
+    <div class="wrap-btn"> 
+        <button class="btn" (click)="natrag()">Natrag</button>
+        <button class="btn" (click)='odjavljivanje()'> Izloguj se</button>
+    </div>
+      
+    <h3>
+        Magacin rasadnika {{ras.naziv}}  </h3>
+        <hr>
+    <div class="magacincont">
+    
+    
+                <table class="table table-borderless w-auto">
+                    <thead class="bravo">
+                        <th>
+                            Sadnice
+                        </th>
+                    </thead>
+                    <tr class="bravo" *ngFor='let ms of msadnice;let i=index;'>
+                        <td class="bravo">
+                            <img src="assets/slike/sadnica.jpg"  height="50px" width="50px" >
+                        </td>
+                        <td class="bravo">
+                            {{msadnice[i].ime_sadnice}}
+                        </td>
+                        <td class="bravo">
+                            <div class="wrap-btn-table">
+                                <button class="btntable" title="izaberi sadnicu" (click)='zasadi(i)'>Izaberi</button>
+    
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+     
+                <table class="table table-borderless w-auto">
+                  <thead class="bravo">
+                      <th>
+                        Preparati
+                      </th>
+                  </thead>
+                    <tr class="bravo" *ngFor='let mp of mpreparati;let i=index;'>
+                        <td class="bravo">
+                            <img src="assets/slike/preparat.jpg"  height="50px" width="50px" >
+                        </td>
+                        <td class="bravo">
+                            {{mpreparati[i].ime_sadnice}}
+                        </td>
+                        <td class="bravo">
+                            <div class="wrap-btn-table">
+                                <button class="btntable" title="izaberi preparat" (click)='povecajProgr(i)'>Izaberi</button>
+    
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+    
+    
+    </div>
+</div>
+

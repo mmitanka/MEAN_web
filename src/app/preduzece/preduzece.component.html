@@ -1,0 +1,227 @@
+<div class="lim-img-back">
+    <div class="wrap-btn"> 
+        <button class="btn" (click)='barChart()'>Prikaz charta</button>
+        <button class="btn" (click)='sortiraj()'>Sortitaj po datumu</button>
+        <button class="btn" type="button" (click)='steps()'>Dodaj novi proizvod</button>
+    
+        <button class="btn" (click)='pLoz()'>Promena lozinke?</button>
+        <button class="btn" (click)='odjavljivanje()'> Izloguj se</button>
+    
+    </div>
+    
+    <!--za prikazivanje porudzbina-->
+    
+    
+    <div *ngIf='rel'>
+        <table class="table table-borderless">
+            <thead class="bravo">
+               <th>Id porudzbine</th>
+               <th>Ime proizvoda</th>
+               <th>Tip</th>
+               <th>Kolicina</th>
+               <th>Datum </th>
+               <th>Za  korisnika</th>
+               <th>Rasadnik</th>
+               <th></th>
+               <th></th>
+               <th></th>
+            </thead>
+            <tr class="bravo" *ngFor='let p of propor; let i=index'>
+               <td class="bravo">
+                   {{p.id_por}}
+               </td>
+               <td class="bravo">
+                   {{p.ime_sadnice}}
+               </td>
+               <td class="bravo">
+                   {{p.tip}}
+               </td >
+               <td class="bravo">
+                   {{p.kolicina}}
+               </td>
+               <td class="bravo">
+                   {{p.datum}}
+               </td>
+               <td class="bravo">
+                   {{p.korime}}
+               </td>
+               <td class="bravo">
+                   {{p.rasadnik}}
+               </td>
+               <td class="bravo">
+                   {{messages[i]}}
+               </td >
+               <td class="bravo">
+                   <div class="wrap-tick-btn">
+                    <button class="tickbtn" title="prihvati" type="button" (click)='proveraBrojKurira(p)'></button> 
+    
+                   </div>
+                   
+               </td>
+               <td class="bravo">
+                   <div class="wrap-x-btn">
+                    <button class="xbtn" title="odbij" type="button" (click)='odbij(p)'></button>
+    
+                   </div>
+       
+               </td>
+           </tr>
+       
+        </table>
+                   
+               
+        <!--ovo kad je sortirano-->   
+    </div>
+    <div *ngIf='dis'>
+           <table class="table table-borderless">
+               <thead class="bravo">
+                  <th>Id porudzbine</th>
+                  <th>Ime proizvoda</th>
+                  <th>Tip</th>
+                  <th>Kolicina </th>
+                  <th>Datum </th>
+                  <th>Za  korisnika</th>
+                  <th>Rasadnik</th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+               </thead>
+               <tr class="bravo" *ngFor='let pr of propor; let i=index'>
+                  <td class="bravo">
+                      {{pr.id_por}}
+                  </td>
+                  <td class="bravo">
+                      {{pr.ime_sadnice}}
+                  </td>
+                  <td class="bravo">
+                      {{pr.tip}}
+                  </td> 
+                  <td class="bravo">
+                    {{pr.kolicina}}
+                </td>  
+                  <td class="bravo">
+                      {{pr.datum}}
+                  </td>          
+                  <td class="bravo">
+                      {{pr.korime}}
+                  </td>
+    
+                  <td class="bravo">
+                      {{pr.rasadnik}}
+                  </td>
+                  <td class="bravo">
+                    {{messages[i]}}
+                  </td>
+                  <td class="bravo">
+                      <div class="wrap-tick-btn">
+                        <button class="tickbtn" title="ptihvati" type="button" (click)='proveraBrojKurira(pr)'></button> 
+    
+                      </div>
+                      
+                  </td>
+                  <td class="bravo">
+                      <div class="wrap-x-btn">
+                        <button class="xbtn" title="odbij" type="button" (click)='odbij(pr)'></button>
+    
+                      </div>
+                  </td>
+              </tr>
+           </table>           
+    </div>
+    <div class="predcont">
+       <div *ngIf='typeErrPr'>
+           <form name='form3' >
+               <table class="table table-borderless w-auto">
+                   <thead class="bravo">
+                       <th>Ime sadnice</th> <th></th> <th></th>
+       
+                   </thead>
+                   <tr class="bravo" *ngFor='let sad of sadnice;let i=index;'>
+                       <td class="bravo"> {{sad.ime_sadnice}}</td>
+                       <td class="bravo">
+                           <div class="wrap-btn-table">
+                            <button class="btntable" (click)="sadnica(sad)">Web stranica?</button>
+    
+                           </div>
+                       </td>
+                       <td class="bravo">
+                           <div class="wrap-btn-table ">
+                            <button class="btntable " (click)='povuciSadnicu(sad)'>Povuci</button>
+    
+                           </div>
+                       </td>
+                   </tr>
+                   
+               </table>
+           </form>
+          
+       </div>
+       <div *ngIf='typeErrPr'>
+           <form name='form4'>
+               <table class="table table-borderless w-auto">
+                   <thead class="bravo">
+                       <th>Ime preparata</th> <th></th> <th></th>
+                   </thead>
+                   <tr class="bravo" *ngFor='let prep of preparati; let i=index'>
+                       <td class="bravo">
+                           {{prep.ime_sadnice}}
+                       </td>
+                       <td class="bravo">
+                           <div class="wrap-btn-table ">
+                            <button class="btntable " (click)='preparat(prep)'>Web strana proizvoda?</button>
+    
+                           </div>
+       
+                       </td>
+                       <td class="bravo">
+                           <div class="wrap-btn-table ">
+                            <button class="btntable " (click)='povuciPreparat(prep)'>Povuci</button>
+    
+                           </div>
+       
+                       </td>
+                   </tr>
+               </table>
+    
+           </form>
+       </div>
+    </div>
+       <div class="limiter" *ngIf='promLoz'>
+           <div class="predcont">
+            <div class="wrap">
+                <span class="form-title">
+                    Promena lozinke
+                </span>
+                <form name="f5" class="pred-form">
+                    <div class="wrap-input">
+                        <label for="slozinka" class="labdes">Stara lozinka</label>
+                        <input type="password" name="slozinka" [(ngModel)]='slozinka'
+                        placeholder="Unesite staru lozinku">
+    
+                    </div>
+                    <div class="wrap-input">
+                        <label for="nlozinka" class="labdes">Nova lozinka</label>
+                        <input type="password" name="nlozinka" [(ngModel)]='nlozinka'
+                        placeholder="Unesite novu lozinku">
+    
+                    </div>
+                    <div class="wrap-input">
+                        <label for="pnlozinka" class="labdes">Ponovljena nova lozinka</label>
+                        <input type="password" name="pnlozinka" [(ngModel)]='pnlozinka'
+                        placeholder="Ponovite novu lozinku">
+    
+                    </div>
+                    <div class="wrap-btn">
+                        <button class="btn" (click)='promeniLozinku()'>Promeni</button>
+    
+                    </div>
+                </form>
+            </div>
+           </div>
+       </div>
+</div>
+
+
+
+   
+   

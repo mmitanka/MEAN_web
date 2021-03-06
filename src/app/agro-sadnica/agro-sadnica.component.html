@@ -1,0 +1,72 @@
+<div class="lim-img-back">
+    <div class="wrap-btn"> 
+        <button class="btn" type="button" (click)='natrag()'>Natrag</button>
+    
+        <button class="btn" (click)='odjavljivanje()'> Izloguj se</button>
+    </div>
+    <div class="limiter">
+    
+        <div class="sad">
+            <img  src="assets/slike/sadnica.jpg" alt="glupa_sadnica" height="200px" width="200px" ><br/>
+            <div class="description">
+                <span> Ime sadnice:&nbsp;{{sad.ime_sadnice}} </span> 
+                <span>
+                    Proizvodjac:&nbsp;{{sad.proizvodjac}}
+                </span> 
+                 <span>
+                    Na stanju:<span  *ngIf='sad.kolicina>0'>da</span>
+                    <span *ngIf='sad.kolicina==0'>ne</span>
+                 </span>  
+            </div>
+        </div>
+        
+        <div class="komentari">
+            <div *ngFor='let kom of komentari; let i=index;'>
+                <i>Tekst komentara</i> <br/>
+                {{komentari[i].komentar}} <br/>
+                Postavio korisnik: &nbsp;{{komentari[i].korime}} <br/>
+                Ocena:&nbsp;{{komentari[i].pocena}} <br/><br/>
+            </div>
+            <form name='form1'>
+                <label class="labdes" for="kol">Kolicina</label>
+                <input type="number" name='kol' [(ngModel)]='kol' placeholder="Unesite kolicinu"> &nbsp;
+                <div class="wrap-btn">
+                    <button class="btn" type='button' (click)='dodajUKorpu()'>Dodaj proizvod u korpu </button> &nbsp;
+                    <button class="btn" type="button" (click)='formaKom()'>Zelite da ostavite komentar?</button> &nbsp;
+                </div>
+        
+            </form>
+                
+        </div>
+        <div class="procont">
+            <div *ngIf='mozeKom' class="wrap">
+                <form name='milenaforma' class="pro-form">
+                    <div class="wrap-inp">
+                        <label for="korime" class="labkom">
+                            Vase korisnicko ime
+                        </label>
+                         <input class="inpkom" type="text" name='korime' value="{{ras.korime}}" readonly>
+                    </div>
+                    <div class="wrap-inp">
+                        <label class=" labkom" for="pocena"> Vasa ocena proizvoda  </label>
+                     <input class="inpkom" type="text" name="pocena" [(ngModel)]='pocena' placeholder="Unesite ocenu proizvoda"> 
+        
+                    </div>
+                    
+                    <div class="wrap-inp">
+                        <label for="komentar" class="labkom"> Komentar</label>
+                    <input class="inpkom" type="text" name="komentar" [(ngModel)]='komentar' placeholder="Ovde ostavite komentar">
+        
+                    </div>
+                    <div class="wrap-btn">
+                        <button class="btn" (click)='ostaviKom()'>Komentarisi</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        
+    </div>
+    
+</div>
+

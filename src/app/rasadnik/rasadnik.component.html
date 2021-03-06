@@ -1,0 +1,286 @@
+<div class="lim-img-back">
+    <div class="wrap-btn"> 
+        <button class="btn" (click)='natrag()'>Izbor rasadnika</button> 
+        <button class="btn" (click)='odjavljivanje()'> Izloguj se</button>
+    </div>
+    
+        <div class="dash">
+            <div class="wrap">
+                <div class="form-title">
+                    Dashboard
+                </div>
+                <form name="form0" class="dash-form">
+                  
+                         <div class="wrap-input">
+                             <label class="labdes" for="voda">
+                                Voda
+                             </label>
+                             <input type="number" name="voda" 
+                            [(ngModel)]='ras.voda'>
+                        </div>
+                </form>
+                    
+                 <form class="dash-form" name="ff1">
+                    <div class="wrap-input">
+                        <label class="labdes" for="temp">  Temperatura </label>
+                         <input type="number" name="temp" 
+                        [(ngModel)]='ras.temp' step="0.5">
+                    </div>
+                 </form>          
+    
+                 <div class="wrap-btn2">
+                    <button class="btn btn-dash" (click)='sacuvajUBazi()' title="sacuvaj nove vrednosti">Sacuvaj</button>
+        
+                </div>
+     
+            </div>
+    
+        </div>
+    
+        <div class="dash">
+            <div class="wrap">
+                <div class="form-title">
+                    Filtriranje i sortiranje
+                </div>
+                <div class="dash-form">
+                    <label class="labdes labdes-2" for="filtr">Filtriraj po</label>
+                    <div class="wrap-input">
+                        <select name="filtr" id="filrt" [(ngModel)]='selected1'>
+                            <option value="sve" selected>Sve</option>
+                            <option value="ime_sadnice">Ime</option>
+                            <option value="proizvodjac">Proizvodjac</option>
+                            <option value="kolicina">Kolicina</option>
+                        </select>
+                    </div>
+                    <div class="wrap-input">
+                        <input type="text" name="name" [(ngModel)]='name' placeholder="Unesite rec">
+                    </div>
+         
+        
+                </div>
+                
+                <div class="wrap-btn2">
+                    <button class="btn btn-dash" (click)='filtrirajPo()'>Filtriraj</button>
+                </div>
+                <div class="dash-form">
+                    <label class="labdes labdes-2" for="sort">Sortiraj po</label>
+                    <div class="wrap-input">
+                        <select name="sort" id="sort" [(ngModel)]='selected2'>
+                            <option value="sve" selected>Sve</option>
+                            <option value="ime_sadnice">Ime</option>
+                            <option value="proizvodjac">Proizvodjac</option>
+                            <option value="kolicina">Kolicina</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="wrap-btn2">
+                    <button class="btn btn-dash" (click)='sortirajPo()'>Sortiraj</button>
+            
+                </div>
+            </div>
+         
+        </div>
+        <div class="magacincont" >
+            <div class="wrap wrap-mag">
+                <div class="form-title title-mag">
+                    Magacin rasadnika {{ras.naziv}}  
+            
+                </div>
+                
+                <form name='form2' class="dash-form magacin" *ngIf='sve'>
+        
+                    <span *ngIf="msadnice.length!=0">
+                        Sadnice:
+                    </span>
+        
+                    <div  *ngFor='let ms of msadnice;let i=index;' class="milenatooltip">
+                        <div class="milenatooltiptext" *ngIf='typeErr'>
+                            Ime:{{msadnice[i].ime_sadnice}} <br/>
+                            Proizvodjac:{{msadnice[i].proizvodjac}} <br/>
+                            Kolicina:{{msadnice[i].kolicina}}
+                        </div>
+                        <div class="wrap-img">
+                            <img class="mag-img" src="assets/slike/sadnica.jpg"  height="50px" width="50px" >
+        
+                        </div>
+                        
+                    </div>
+                    <br/>
+                    <span *ngIf="mpreparati.length!=0">
+                    Preparati:
+                    </span>
+                    <div  *ngFor='let mp of mpreparati;let i=index' class="milenatooltip">
+                        <div class="milenatooltiptext" *ngIf='typeErr'>
+                            Ime:{{mpreparati[i].ime_sadnice}} <br/>
+                            Proizvodjac:{{mpreparati[i].proizvodjac}} <br/>
+                            Kolicina:{{mpreparati[i].kolicina}}
+                        </div>
+                        <div class="wrap-img">
+                            <img class="mag-img" src="assets/slike/preparat.jpg"  height="50px" width="50px" >
+        
+                        </div>
+                    </div>
+                    <span *ngIf="psadnice.length!=0 || ppreparati.length!=0">
+                    Porudzbine: 
+                    </span>
+                    <div *ngFor='let ps of psadnice;let i=index;' class="milenatooltip">
+                        <div class="milenatooltiptext" *ngIf='typeErr'>
+                            Ime:{{psadnice[i].ime_sadnice}} <br/>
+                            Proizvodjac:{{psadnice[i].proizvodjac}} <br/>
+                            Kolicina:{{psadnice[i].kolicina}}
+                            <div class="wrap-btn">
+                                <button class="btn2" (click)='otkazis(i)'>Otkazi</button>
+        
+                            </div>
+                        </div>
+                        <div class="wrap-img">
+                            <img class="mag-img" src="assets/slike/sadnica.jpg"  height="50px" width="50px" >
+        
+                        </div>
+        
+                    </div>
+                    <div  *ngFor='let pp of ppreparati;let i=index' class="milenatooltip">
+                        <div class="milenatooltiptext" *ngIf='typeErr'>
+                            Ime:{{ppreparati[i].ime_sadnice}} <br/>
+                            Proizvodjac:{{ppreparati[i].proizvodjac}} <br/>
+                            Kolicina:{{ppreparati[i].kolicina}}
+                            <div class="wrap-btn">
+                                <button class="btn2" (click)='otkazip(i)'>Otkazi</button>
+        
+                            </div>
+        
+                        </div>
+                        <div class="wrap-img">
+                            <img class="mag-img" src="assets/slike/preparat.jpg" height="50px" width="50px" >
+        
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="wrap-btn">
+                        <button class="btn btn-mag" type="button" title="poruci nove prizvode iz online prod" (click)='poruci()'>Poruci</button>
+        
+                    </div>
+                </form>
+                <form name='form3' class="dash-form magacin" *ngIf='filt' >
+        
+                    <span *ngIf="fsad.length!=0">
+                        Sadnice:
+                    </span>
+                
+                    <div  *ngFor='let fs of fsad;let i=index;' class="milenatooltip">
+                        <div class="milenatooltiptext" *ngIf='typeErr'>
+                            Ime:{{fsad[i].ime_sadnice}} <br/>
+                            Proizvodjac:{{fsad[i].proizvodjac}} <br/>
+                            Kolicina:{{fsad[i].kolicina}}
+                        </div>
+                        <div class="wrap-img">
+                            <img class="mag-img" src="assets/slike/sadnica.jpg"  height="50px" width="50px" >
+        
+                        </div>
+                        
+                    </div>
+                    <span *ngIf="fprep.length!=0">
+                        Preparati:
+                        </span>
+                    <div  *ngFor='let fp of fprep;let i=index' class="milenatooltip">
+                    
+                        <div class="milenatooltiptext" *ngIf='typeErr'>
+                        Ime:{{fprep[i].ime_sadnice}} <br/>
+                        Proizvodjac:{{fprep[i].proizvodjac}} <br/>
+                        Kolicina:{{fprep[i].kolicina}}
+                        </div>
+                        <div class="wrap-img">
+                            <img class="mag-img" src="assets/slike/preparat.jpg"  height="50px" width="50px" >
+        
+                        </div>
+                    </div>
+                    
+                
+                </form>
+                <form name='form4' class="dash-form magacin" *ngIf='sort'>
+                    <span *ngIf="ssad.length!=0">
+                        Sadnice:
+                    </span>
+                    <div  *ngFor='let ss of ssad;let i=index;' class="milenatooltip">
+                        <div class="milenatooltiptext" *ngIf='typeErr'>
+                            Ime:{{ssad[i].ime_sadnice}} <br/>
+                            Proizvodjac:{{ssad[i].proizvodjac}} <br/>
+                            Kolicina:{{ssad[i].kolicina}}
+                        </div>
+                        <div class="wrap-img">
+                            <img class="mag-img" src="assets/slike/sadnica.jpg"  height="50px" width="50px" >
+            
+                        </div>
+                        
+                    </div>
+                    <span *ngIf="sprep.length!=0">
+                        Preparati:
+                    </span>
+                    
+                    <div  *ngFor='let sp of sprep;let i=index' class="milenatooltip">
+                    
+                        <div class="milenatooltiptext" *ngIf='typeErr'>
+                        Ime:{{sprep[i].ime_sadnice}} <br/>
+                        Proizvodjac:{{sprep[i].proizvodjac}} <br/>
+                        Kolicina:{{sprep[i].kolicina}}
+                        </div>
+                        <div class="wrap-img">
+                            <img class="mag-img" src="assets/slike/preparat.jpg"  height="50px" width="50px" >
+            
+                        </div>
+                    </div>
+                <br/>
+                </form>
+            </div>
+        
+        </div>
+    
+    <div class="cont" >
+        <form name="form1">
+            <div *ngFor='let sad of sadnica;let i=index;' class="milenatooltip">
+                
+                    <div class="milenatooltiptext" *ngIf='typeErr'> 
+                   
+                        Ime:{{sadnica[i].ime_sadnice}}<br/>
+                        Proizvodjac:{{sadnica[i].proizvodjac}}<br/>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" aria-valuemax="100" aria-valuemin="0" [ngStyle]="{width: sad.progres + '%'}" 
+                             >{{sadnica[i].progres}}%</div>
+                        </div>
+                        Progres:{{sadnica[i].progres}}
+                        <div class="wrap-btn">
+                            <button class="btn2" *ngIf='sadnica[i].progres==100' (click)='presadi(sad)'>Presadi</button>
+                            <button class="btn2" type="button" (click)='povecajProgres(i)'>Dodaj preparat</button>
+                        </div>
+    
+                    
+                    </div> 
+                    
+                        <div class="wrap-img">
+                            <img  src="assets/slike/sadnica.jpg" alt="glupa_sadnica" height="70px" width="70px" >
+    
+                        </div>
+                
+                    
+    
+      
+            </div> 
+           <span class="wrap-img" *ngFor='let slob of slobodna_mesta;let i=index;'>
+                <span (mousemove)='dijalogProzor(i)' *ngIf='typeErr'>
+                    
+                    
+                        <img src="assets/slike/praznomesto.jpg" height="70px" width="70px" >
+    
+      
+                </span>
+            </span>
+    
+        </form>
+    </div>
+    
+    
+    <div class="odrzavanje">
+        <span>{{message}}</span>
+    </div>
+</div>

@@ -1,0 +1,115 @@
+<div class="lim-img-back">
+<div class="wrap-btn"> 
+    <button class="btn" (click)='natrag()'>Natrag</button>
+    <button class="btn" (click)='odjavljivanje()'> Izloguj se</button>
+</div>
+
+
+    <div class="navigate">
+        <div class="wrap-btn2">
+            <button class="shopping-cart-btn" type="button" title="otvori korpu" (click)='prebaciNaKorpu()'>.</button>
+    
+        </div>
+        <div class="wrap-select">
+            <select  class="sel" name="pred" id="pred" [(ngModel)]='selected'>
+                <option *ngFor='let p of pred;let i=index' value="{{pred[i].skr}}">{{p.naziv}}</option>
+            </select>
+        </div>
+
+        <div class="wrap-btn2">
+            <button class="btn2" (click)='ucitajProizvode()'>posalji</button> &nbsp;
+            <button class="btn2" title="ucitaj sve" (click)='ucitajSveProiz()'>svi</button>
+    
+        </div>
+    
+    
+    
+    </div>
+    
+    <div class="onlinecont">
+        <div *ngIf='typeErr'>
+            <form class="sadn" name='form1'>
+                <span *ngIf='sadnice!=null'>Sadnice:</span> <br/>
+                <div  *ngFor='let s of sadnice;let i=index;' class="milenatooltip">
+                    <img  src="assets/slike/sadnica.jpg" alt="glupa_sadnica" height="50px" width="50px" ><br/>
+                    <div class="milenatooltiptext">
+                        Ime:{{sadnice[i].ime_sadnice}}<br/>
+                        Proizvodjac:{{sadnice[i].proizvodjac}}<br/>
+                        Na stanju: <span *ngIf='naStanjuS(i)'> da</span><span *ngIf='!naStanjuS(i)'> ne</span><br/>
+                        Ocena:{{sadnice[i].ocena}}<br/>
+                        <div class="wrap-btn2">
+                            <button class="btn2" (click)='sadnica(i)'>Detaljan prikaz?</button>
+        
+                        </div>
+        
+                    </div>
+                </div>
+            </form>
+           
+        </div>
+        <div *ngIf='typeErr'>
+            <form class="prep" name='form2'>
+                <span *ngIf='preparati!=null'>Preparati:</span> <br/>
+                <div  *ngFor='let pr of preparati;let i=index;' class="milenatooltip">
+                    <img  src="assets/slike/preparat.jpg" alt="preparat" height="50px" width="50px"><br/>
+                    <div class="milenatooltiptext">  
+                        Ime:{{preparati[i].ime_sadnice}}<br/>
+                        Proizvodjac:{{preparati[i].proizvodjac}}<br/>
+                        Na stanju: <span *ngIf='naStanjuP(i)'> da</span><span *ngIf='!naStanjuP(i)'> ne</span><br/>
+                        Ocena:{{preparati[i].ocena}}<br/>
+                        <div class="wrap-btn2">
+                            <button class="btn2" (click)='preparat(i)'>Detaljan prikaz?</button>
+        
+                        </div>
+                    </div> 
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!--deo za sve proizvode odn proizvode svih proizvodjaca-->
+    <div class="onlinecont">
+        <div *ngIf='typeErrSvi'>
+            <form class="sadn" name='form3'>
+                <span *ngIf='sadnice!=null'>Sadnice:</span> <br/>
+                <div *ngFor='let s of sadnice;let i=index;' class="milenatooltip">
+                    <img  src="assets/slike/sadnica.jpg" alt="glupa_sadnica" height="50px" width="50px" ><br/>
+                    <div class="milenatooltiptext">
+                        Ime:{{sadnice[i].ime_sadnice}}<br/>
+                        Proizvodjac:{{sadnice[i].proizvodjac}}<br/>
+                        Na stanju: <span *ngIf='naStanjuS(i)'> da</span><span *ngIf='!naStanjuS(i)'> ne</span><br/>
+                        Ocena:{{sadnice[i].ocena}}<br/>
+                        <div class="wrap-btn2">
+                            <button class="btn2" (click)='sadnica(i)'>Detaljan prikaz?</button>
+        
+                        </div>
+        
+                    </div>
+                </div>
+            </form>
+           
+        </div>
+        <div *ngIf='typeErrSvi'>
+            <form class="prep" name='form4'>
+                <span *ngIf='preparati!=null'>Preparati:</span> <br/>
+                <div *ngFor='let pr of preparati;let i=index;' class="milenatooltip">
+                    <img  src="assets/slike/preparat.jpg" alt="preparat" height="50px" width="50px"><br/>
+                    <div class="milenatooltiptext">  
+                        Ime:{{preparati[i].ime_sadnice}}<br/>
+                        Proizvodjac:{{preparati[i].proizvodjac}}<br/>
+                        Na stanju: <span *ngIf='naStanjuP(i)'> da</span><span *ngIf='!naStanjuP(i)'> ne</span><br/>
+                        Ocena:{{preparati[i].ocena}}<br/>
+                        <div class="wrap-btn2">
+                            <button class="btn2" (click)='preparat(i)'>Detaljan prikaz?</button>
+        
+                        </div>
+                    </div> 
+                </div>
+            </form>
+        </div>
+    </div>
+    
+</div>
+
+
+

@@ -1,0 +1,32 @@
+<div class="lim-img-back">
+    <div class="wrap-btn">
+        <button class="btn" (click)='natrag()'>Natrag </button>
+        <button class="btn" (click)='odjavljivanje()'> Izloguj se</button>
+    </div>
+    <br/>
+    <div class="limiter">
+        <div class="web-cont">
+            <img  src="assets/slike/preparat.jpg" alt="preparat" height="200px" width="200px" ><br/>
+            <div class="text" *ngIf='typeErr'>
+                Ime preparata:&nbsp;{{prep.ime_sadnice}} <br/>
+                Proizvodjac:&nbsp;{{prep.proizvodjac}}<br/>
+            </div>
+        </div>
+        
+        <div class="komentari">
+            <div *ngFor='let kom of komentari; let i=index;'>
+                <i>Tekst komentara</i> <br/>
+                {{komentari[i].komentar}} <br/>
+                Postavio korisnik: &nbsp;{{komentari[i].korime}} <br/>
+                Ocena:&nbsp;{{komentari[i].pocena}} <br/><br/>
+            </div>
+        </div>
+        <div class="ocena">
+            <span *ngIf='typeErr'> Prosecna ocena</span>
+            {{prep.ocena}}
+        </div>
+    </div>
+    
+</div>
+
+

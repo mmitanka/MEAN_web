@@ -1,0 +1,313 @@
+<div class="limiter">
+    <div class="regcont">
+        <div class="wrap">
+            <form class="btn-form" name="form1">
+                <div class="wrap-btn">
+                    <button  (click)='regPolj()'>Poljoprivrednik</button>   
+                    <button (click)='regPred()'>Preduzece</button>
+                </div>
+            </form>
+            <div *ngIf='poljoprivrednik!=null'>
+
+                <form name="form2" class="reg-form">
+                    <div class="wrap-input">
+                        <label class="lbwr" for="ime">Ime</label>
+                        <input type="text" name="ime" [(ngModel)]="polj.ime" required placeholder="Unesite ime">
+                        <span>{{message[0]}}</span>
+
+                    </div>
+                    <div class="wrap-input">
+                        <label for="prezime">Prezime</label>
+                        <input type="text" name="prezime" [(ngModel)]="polj.prezime" required placeholder="Unesite prezime">
+                        <span>{{message[1]}}</span>
+
+                    </div>
+                    <div class="wrap-input">
+                        <label for="korime">Korisnicko ime</label>
+                        <input type="text" name="korime"  [(ngModel)]='polj.korime' required placeholder="Unesite korisnicko ime">
+                        <span>{{message[2]}}</span>
+
+                    </div>
+                    <div class="wrap-input">
+                        <label for="lozinka">Lozinka</label>
+                        <input type="password" name="lozinka"  [(ngModel)]='polj.lozinka' required placeholder="Unesite lozinku">
+                        <span>{{message[3]}}</span>
+
+                    </div>
+                    <div class="wrap-input">
+                        <label for="plozinka">Ponovljena lozinka</label>
+                        <input type="password" name="plozinka"  [(ngModel)]='plozinka' required placeholder="Ponovite lozinku">
+                        <span>{{message[4]}}</span>
+
+                    </div>
+                    <div class="wrap-input">
+                        <label for="dat_rodj">Datum rodjenja</label>
+                        <input type="date" name="dat_rodj" [(ngModel)]='polj.dat_rodj' required placeholder="Unesite datum rodj">
+                        <span>{{message[5]}}</span>
+
+                    </div>
+                    <div class="wrap-input">
+                        <label for="mesto_rodj">Mesto rodjenja</label>
+                        <input type="text" name="mesto_rodj" [(ngModel)]='polj.mesto_rodj' required placeholder="Unesite mesto rodjenja">
+                        <span>{{message[6]}}</span>
+
+                    </div>
+                    <div class="wrap-input">
+                        <label for="telefon">Telefon</label>
+                        <input type="text" name="telefon" [(ngModel)]='polj.telefon' required placeholder="Unesite telefon">
+                        <span>{{message[7]}}</span>
+
+
+                    </div>
+                    <div class="wrap-input">
+                        <label for="email">Email</label>
+                        <input type="text" name="email" [(ngModel)]='polj.email' required placeholder="Unesite email">
+                        <span>{{message[8]}}</span>
+
+                    </div>
+                    <div class="recaptcha">
+                        <re-captcha  (resolved)="resolved($event)" siteKey="6LcRjakZAAAAAEsiPV1QEGsbfpkbD128f6flwUGM"></re-captcha>
+                    </div>
+                    <div class="wrap-btn">
+                        <button (click)='registracijaPolj()'>Registruj se</button>
+
+                    </div>
+                </form>
+            </div>
+
+            <div *ngIf='preduzece!=null'>
+
+                <form name="form2" class="reg-form">
+                        <div class="wrap-input">
+                            <label for="naziv">Naziv</label>
+                            <input type="text" name="naziv" [(ngModel)]='pred.naziv' required placeholder="Unesite naziv preduzeca">
+                            <span>{{message[0]}}</span>
+
+                        </div>
+
+                        <div class="wrap-input">
+                            <label for="skr">Akronim</label>
+                            <input type="text" name="skr" [(ngModel)]='pred.skr' placeholder="Unesite akronim preduzeca">
+
+                            <span>{{message[2]}}</span>
+
+                        </div>
+                        <div class="wrap-input">
+                            <label for="lozinka">Lozinka</label>
+                            <input type="password" name="lozinka" [(ngModel)]='pred.lozinka' required placeholder="Unesite lozinku">
+                            <span>{{message[3]}}</span>
+
+                        </div>
+                        <div class="wrap-input">
+                            <label for="plozinka">Ponovljena lozinka</label>
+                            <input type="password" name="plozinka"  [(ngModel)]='plozinka' required placeholder="Ponovite lozinku">
+                            <span>{{message[4]}}</span>
+
+                        </div>
+                        <div class="wrap-input">
+                            <label for="dat_osn">Datum osnivanja</label>
+                            <input type="date"  name="dat_osn" [(ngModel)]='pred.datum_osn' required placeholder="Unesite datum rodj">
+                            <span>{{message[5]}}</span>
+
+                        </div>
+                        <div class="wrap-input">
+                            <label for="mesto_osn">Mesto </label>
+                            <input type="text" name="mesto_osn" [(ngModel)]='pred.mesto' required placeholder="Unesite mesto rodjenja">
+                            <span>{{message[6]}}</span>
+
+                        </div>
+
+                        <div class="wrap-input">
+                            <label for="email">Email</label>
+                            <input type="text" name="email" [(ngModel)]='pred.email' required placeholder="Unesite email">
+                            <span>{{message[8]}}</span>
+
+                        </div>
+                        <div class="recaptcha">
+                            <re-captcha  (resolved)="resolved($event)" siteKey="6LcRjakZAAAAAEsiPV1QEGsbfpkbD128f6flwUGM"></re-captcha>
+                        </div>
+                    <div class="wrap-btn">
+                        <button (click)='registracijaPred()'>Registruj se</button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<!--<form >
+    <button  (click)='regPolj()'>Poljoprivrednik</button>   
+    <button (click)='regPred()'>Preduzece</button>
+
+    <div *ngIf='poljoprivrednik!=null'>
+        <form >
+            <table>
+                <tr>
+                    <td>Ime:</td>
+                    <td>
+                        <input type="text" name="ime" [(ngModel)]="polj.ime" required>
+                    </td>
+                    <td>
+                        <span>{{message[0]}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Prezime:</td>
+                    <td>
+                        <input type="text" name="prezime" [(ngModel)]="polj.prezime" required>
+                    </td>
+                    <td>
+                        <span>{{message[1]}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Korisnicko ime:</td>
+                    <td>
+                        <input type="text" name="korime"  [(ngModel)]='polj.korime' required>
+                    </td>
+                    <td>
+                        <span>{{message[2]}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Lozinka:</td>
+                    <td>
+                        <input type="password" name="lozinka"  [(ngModel)]='polj.lozinka' required>
+                    </td>
+                    <td>
+                        <span>{{message[3]}}</span>
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>Ponovite lozinku:</td>
+                    <td>
+                        <input type="password" name="plozinka"  [(ngModel)]='plozinka' required>
+                    </td>
+                    <td>
+                        <span>{{message[4]}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Datum rodjenja:</td>
+                    <td>
+                        <input type="text" name="dat_rodj" [(ngModel)]='polj.dat_rodj' required>
+                    </td>
+                    <td>
+                        <span>{{message[5]}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mesto rodjenja:</td>
+                    <td>
+                        <input type="text" name="mesto_rodj" [(ngModel)]='polj.mesto_rodj' required>
+                    </td>
+                    <td>
+                        <span>{{message[6]}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Telefon:</td>
+                    <td>
+                        <input type="text" name="telefon" [(ngModel)]='polj.telefon' required>
+                    </td>
+                    <td>
+                        <span>{{message[7]}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>E-mail:</td>
+                    <td>
+                        <input type="text" name="email" [(ngModel)]='polj.email' required>
+                    </td>
+                    <td>
+                        <span>{{message[8]}}</span>
+                    </td>
+                </tr>
+
+            </table>
+            <br/> 
+            <button (click)='registracijaPolj()'>Registruj se</button>
+        </form>
+    </div>
+    
+    <div *ngIf='preduzece!=null'>
+        <form >
+            <table>
+                <tr>
+                    <td>Naziv preduzeca:</td>
+                    <td>
+                        <input type="text" name="naziv" [(ngModel)]='pred.naziv'>
+                    </td>
+                    <td>
+                        <span>{{message[0]}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Akronim:</td>
+                    <td>
+                        <input type="text" name="skr" [(ngModel)]='pred.skr'>
+                    </td>
+                    <td>
+                        <span>{{message[1]}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Lozinka:</td>
+                    <td>
+                        <input type="text" name="lozinka" [(ngModel)]='pred.lozinka'>
+                    </td>
+                    <td>
+                        <span>{{message[2]}}</span>
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>Ponovite lozinku:</td>
+                    <td>
+                        <input type="text" name="plozinka" [(ngModel)]='plozinka'>
+                    </td>
+                    <td>
+                        <span>{{message[6]}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Datum osnivanja:</td>
+                    <td>
+                        <input type="text" name="dat_osn" [(ngModel)]='pred.datum_osn'>
+                    </td>
+                    <td>
+                        <span>{{message[4]}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mesto osnivanja:</td>
+                    <td>
+                        <input type="text" name="mesto_osn" [(ngModel)]='pred.mesto'>
+                    </td>
+                    <td>
+                        <span>{{message[5]}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>E-mail:</td>
+                    <td>
+                        <input type="text" name="email" [(ngModel)]='pred.email'>
+                    </td>
+                    <td>
+                        <span>{{message[3]}}</span>
+                    </td>
+                </tr>
+
+            </table>
+            <br/> 
+            <button (click)='registracijaPred()'>Registruj se</button>
+        </form>
+    </div>
+</form>
+-->
+
+

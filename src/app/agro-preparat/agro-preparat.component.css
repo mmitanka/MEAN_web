@@ -1,0 +1,172 @@
+.wrap-btn {
+  padding-top: 3px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+.btn {
+border: none;
+  background: transparent;
+  font-size: 15px;
+  color: #fff;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  line-height: 1.2;
+  margin-right: 3px;
+  margin-bottom: 3px;
+  display:flex;
+  justify-content: center;
+  align-items:center ;
+  padding: 0px;
+  min-width: 160px;
+  height: 42px;
+  border-radius: 6px;
+  background-color: #cefa2f;
+  position: relative;
+  z-index: 1;
+}
+.btn:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+.description {
+  padding-top: 10px;
+  margin-right: 60px;
+  width: auto;
+}
+ 
+.description span {
+  display: block;
+  font-size:18px;
+  color: rgb(217, 255, 45);
+
+  font-weight: 400;
+}
+.prep {
+  width: 100%;  
+  display: block;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  padding-top: 0px;
+  margin: 0em;
+  position: relative;
+}
+img {
+  float: left;
+  padding-top: 0px;
+  padding-left: 20px;
+  margin-right: 10px;
+  border-radius: 10% 10% 10% 10%;
+  opacity: 0.8
+}
+.limiter {
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+.limiter .komentari {
+  display: inline-block;
+  padding-top: 10%;
+  color: rgb(217, 255, 45);
+}
+input {
+  box-sizing: border-box;
+  border-color: rgb(181, 206, 91);
+  
+  border-radius: 5%;
+  font-size: 15px;
+  color: rgb(214, 243, 85);
+
+  line-height: 2.5;
+
+  display: block;
+  width: 80%;
+  height: 25px;
+  background: transparent;
+  padding: 0 10px 0 30px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+input::placeholder {
+  color: rgb(214, 243, 85);
+
+}
+.labkom {
+  color:rgb(127, 146, 40);
+  margin: 0;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.labdes {
+  margin: 0;
+  display: block;
+  color:rgb(181, 206, 91);
+  text-align: center;
+  font-size: 18px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+.inpkom {
+outline: none;
+  border: none;
+  font-size: 12px;
+  color: #555555;
+  line-height: 0.5;
+
+  display: block;
+  width: 100%;
+  height: 18px;
+  background: transparent;
+  padding: 0 10px 0 30px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.wrap-inp {
+  width: 100%;
+  position: relative;
+  border-bottom: 1px solid #e4ff99;
+  padding: 15px 0;
+}
+.pro-form {
+  width: 100%;
+
+  border-radius: 10px;
+  background-color: #dcff5ff3;
+  backface-visibility: visible ;
+}
+.procont {
+  
+  width: 100%;  
+  min-height: 80vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  margin: 0em;
+  position: relative;
+}
+.wrap{
+  width: 390px;
+border-radius: 10px;
+overflow: hidden;
+
+background: transparent;  
+}
+
+.lim-img-back {
+  width: 100%;
+  margin: 0 auto;
+  width: 100%;
+  min-height: 120vh;
+  background-image: url('/assets/slike/kukuruz.JPEG');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}

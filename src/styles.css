@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0px; 
+    padding: 0px; 
+    background-size: cover;
+}
+.nav-item:hover .nav-link:hover {
+    background-color:rgb(85, 155, 85) ;
+    color: rgb(57, 124, 57);
+    border-radius: 3px;
+
+
+ }
+ .navbar {
+     background-color: rgb(89, 202, 89);
+     border-radius: 3px;
+    
+ }
+ .nav-link {
+     color: rgb(23, 87, 23);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 3px;
+
+ }

@@ -1,0 +1,434 @@
+<div class="lim-img-back">
+    <div class="wrap-btn">
+        <button class="menubutton" (click)='prikaziZahtevePolj()'>
+           Prikaz poljoprivrednika
+        </button>
+
+          <button class="menubutton" (click)='prikaziZahtevePred()'> Prikaz preduzeca</button>
+
+          <button class="menubutton" (click)='prikaziKorisnikePo()'>Azuriranje poljoprivrednika</button>
+
+          <button class="menubutton" (click)='prikaziKorisnikePr()'>Azuriranje preduzeca</button>
+
+          <button  class="menubutton" (click)='dodajKor()'>Dodavanje korisnika </button>
+
+          <button class="menubutton" (click)='odjavljivanje()'>Izloguj se</button>
+
+    </div>
+
+<div  *ngIf='prikaziPolj'>
+<h3>
+Spisak svih zahteva za registracijom poljoprivrednika
+</h3>
+<hr>
+<table class="table table-borderless">
+
+<thead>
+    <th>Ime</th>
+    <th>Prezime</th>
+    <th>Korisnicko ime</th>
+    <th>Lozinka</th>
+    <th>Datum rodjenja</th>
+    <th>Mesto rodjenja</th>
+    <th>Telefon</th>
+    <th>Email adresa</th>
+</thead>
+   
+
+<tr class="bravo" *ngFor='let polj of poljoprivrednik'>
+    <td class="bravo">{{polj.ime}}</td>
+    <td class="bravo">{{polj.prezime}}</td>
+    <td class="bravo">{{polj.korime}}</td>
+    <td class="bravo">{{polj.lozinka}} </td>
+    <td class="bravo">{{polj.dat_rodj}}</td>
+    <td class="bravo">{{polj.mesto_rodj}}</td>
+    <td class="bravo">{{polj.telefon}}</td>
+    <td class="bravo">{{polj.email}}</td>
+    <td class="bravo" >
+        <div class="wrap-tick-btn">
+            <button class="tickbtn" title="prihvati" (click)='prihvatiZahtevPolj(polj.korime)'></button>
+        </div>
+    </td>
+    <td class="bravo"> 
+        <div class="wrap-x-btn">
+            <button class="xbtn" title="odbij" (click)='odbijZahtevPolj(polj.korime)'></button>
+
+        </div>
+    </td>
+</tr>
+</table>
+</div>
+<div  *ngIf='prikaziPred'>
+<h3>
+Spisak svih zahteva za registracijom preduzeca
+
+</h3>
+<hr>
+<table class="table table-borderless">
+
+<thead>
+    <th>Naziv</th>
+    <th>Akronim</th>
+    <th>Lozinka</th>
+    <th>Datum osnivanja</th>
+    <th>Mesto osnivanja</th>
+    <th>Email adresa</th>
+</thead>
+
+
+<tr class="bravo" *ngFor='let pred of preduzece'>
+    <td class="bravo">{{pred.naziv}}</td>
+    <td class="bravo">{{pred.skr}}</td>
+    <td class="bravo">{{pred.lozinka}} </td>
+    <td class="bravo">{{pred.datum_osn}}</td>
+    <td class="bravo">{{pred.mesto}}</td>
+    <td class="bravo">{{pred.email}}</td>
+    <td class="bravo">
+        <div class="wrap-tick-btn">
+            <button class="tickbtn" title="prihvati" (click)='prihvatiZahtevPred(pred.skr)'></button>
+
+        </div>
+    </td>
+    <td class="bravo"> 
+
+        <div class="wrap-x-btn">
+            <button title="odbij" class="xbtn" (click)='odbijZahtevPred(pred.skr)'></button>
+
+        </div>
+    </td>
+</tr>
+</table>
+</div>
+<div  *ngIf='prikaziKorPr'>
+<h3>
+Preduzeca
+
+</h3>
+<hr>
+<table class="table table-borderless">
+
+<thead>
+    <th>Naziv</th>
+    <th>Akronim</th>
+    <th>Lozinka</th>
+    <th>Datum osnivanja</th>
+    <th>Mesto osnivanja</th>
+    <th>Email adresa</th>
+</thead>
+
+
+<tr class="bravo" *ngFor='let pred of preduzece'>
+    <td class="bravo">{{pred.naziv}}</td>
+    <td class="bravo">{{pred.skr}}</td>
+    <td class="bravo">{{pred.lozinka}} </td>
+    <td class="bravo">{{pred.datum_osn}}</td>
+    <td class="bravo">{{pred.mesto}}</td>
+    <td class="bravo">{{pred.email}}</td>
+    <td class="bravo">
+        <div class="wrap-tick-btn">
+            <button class="tickbtn" title="azuriraj" (click)='azPred(pred)'></button>
+
+        </div>
+    </td>
+    <td class="bravo">
+        <div class="wrap-x-btn">
+            <button class="xbtn" title="izbrisi" (click)='izbrisiPred(pred.skr)'></button>
+
+        </div> 
+    </td>
+</tr>
+</table>
+<div class="wrap-btn">
+<button class="menubutton" (click)='formaPred()'>Dodaj preduzece</button>
+
+</div>
+</div>
+<div *ngIf='prikaziKorPo'>
+<h3>
+Poljoprivrednici
+</h3>
+<hr>
+<table  class="table table-borderless">
+
+<thead>
+    <th>Ime</th>
+    <th>Prezime</th>
+    <th>Korisnicko ime</th>
+    <th>Lozinka</th>
+    <th>Datum rodjenja</th>
+    <th>Mesto rodjenja</th>
+    <th>Telefon</th>
+    <th>Email adresa</th>
+</thead>
+
+
+<tr class="bravo" *ngFor='let polj of poljoprivrednik'>
+    <td class="bravo">{{polj.ime}}</td>
+    <td class="bravo">{{polj.prezime}}</td>
+    <td class="bravo">{{polj.korime}}</td>
+    <td class="bravo">{{polj.lozinka}} </td>
+    <td class="bravo">{{polj.dat_rodj}}</td>
+    <td class="bravo">{{polj.mesto_rodj}}</td>
+    <td class="bravo">{{polj.telefon}}</td>
+    <td class="bravo">{{polj.email}}</td>
+    <td class="bravo">
+        <div class="wrap-tick-btn">
+            <button class="tickbtn" title="azuriraj" (click)='azPolj(polj)'></button>
+
+        </div>
+    </td>
+    <td class="bravo"> 
+        <div class="wrap-x-btn">
+        <button class="xbtn" title="izbrisi" (click)='izbrisiPolj(polj.korime)'></button>
+        </div>
+    </td>
+</tr>
+</table>
+<div class="wrap-btn">
+<button class="menubutton" (click)='formaPolj()'>Dodaj poljoprivrednika</button>
+
+</div>
+
+</div>
+<div class="limiter" *ngIf='azPo'> 
+<div class="acont">
+<div class="wrap">
+    <span class="form-title">
+        Azuriranje poljoprivrednika
+    </span>
+    <form name='f1' class="admin-form">
+        <div class="wrap-input">
+            <label for="ime" class="labdes">Ime</label>
+            <input type="text" name="ime" [(ngModel)]="polj.ime">
+
+        </div>
+        <div class="wrap-input">
+            <label for="prezime" class="labdes">Prezime</label>
+            <input type="text" name="prezime" [(ngModel)]="polj.prezime" >
+
+        </div>
+        <div class="wrap-input">
+            <label for="korime" class="labdes">Korisnicko ime</label>
+            <input type="text" name="korime"  [(ngModel)]='polj.korime'>
+
+        </div>
+        <div class="wrap-input">
+            <label for="lozinka" class="labdes">Lozinka</label>
+            <input type="password" name="lozinka"  [(ngModel)]='polj.lozinka'>
+
+        </div>
+        <div class="wrap-input">
+            <label for="dat_rodj" class="labdes">Datum rodjenja</label>
+            <input type="date" name="dat_rodj" [(ngModel)]='polj.dat_rodj'>
+
+        </div>
+        <div class="wrap-input">
+            <label for="mesto_rodj" class="labdes">Mesto rodjenja</label>
+            <input type="text" name="mesto_rodj" [(ngModel)]='polj.mesto_rodj'>
+
+        </div>
+        <div class="wrap-input">
+            <label for="telefon" class="labdes">Telefon</label>
+            <input type="text" name="telefon" [(ngModel)]='polj.telefon'>
+
+        </div>
+        <div class="wrap-input">
+            <label for="email" class="labdes">Email</label>
+            <input type="text" name="email" [(ngModel)]='polj.email'>
+
+        </div>
+        <div class="wrap-btn">
+            <button class="menubutton" (click)='azurirajPolj()'>Potvrdi</button>
+
+        </div>
+    </form>
+</div>
+</div>
+
+</div>
+<div class="limiter" *ngIf='azPr'>
+<div class="acont">
+<div class="wrap">
+    <span class="form-title">
+        Azuriranje preduzeca
+    </span>
+    <form name='f2' class="admin-form">
+        <div class="wrap-input">
+            <label for="naziv" class="labdes">Naziv preduzeca</label>
+            <input type="text" name="naziv" [(ngModel)]='pred.naziv'>
+        
+        </div>
+        <div class="wrap-input">
+            <label for="skr" class="labdes">Akronim</label>
+            <input type="text" name="skr" [(ngModel)]='pred.skr'>
+    
+        </div>
+        <div class="wrap-input">
+            <label for="lozinka" class="labdes">Lozinka</label>
+            <input type="password" name="lozinka" [(ngModel)]='pred.lozinka'>
+    
+        </div>
+        <div class="wrap-input">
+            <label for="dat_osn" class="labdes">Datum osnivanja</label>
+            <input type="date" name="dat_osn" [(ngModel)]='pred.datum_osn'>
+      
+        </div>
+        <div class="wrap-input">
+            <label for="mesto_osn" class="labdes">Mesto</label>
+            <input type="text" name="mesto_osn" [(ngModel)]='pred.mesto'>
+          
+        </div>
+
+        <div class="wrap-input">
+            <label for="email" class="labdes">Email</label>
+            <input type="text" name="email" [(ngModel)]='pred.email'>
+        
+        </div>
+        <div class="wrap-btn">
+            <button class="menubutton" (click)='azurirajPred()'>Potvrdi</button>
+
+        </div>
+    </form>
+</div>
+</div>
+
+</div>
+<div  *ngIf='dodKor'> 
+<span class="wrap-btn" *ngIf='dodKor'>
+<button class="menubutton" (click)='formaPolj()'>Dodaj polj</button>
+<button class="menubutton" (click)='formaPred()'>Dodaj preduzece</button>
+</span>
+</div>
+<div class="limiter" *ngIf='dodPo'>
+<div class="acont">
+<div class="wrap">
+    <span class="form-title">
+        Dodavanje poljoprivrednika
+    </span>
+    <form name='f1' class="admin-form">
+        <div class="wrap-input">
+            <label for="ime" class="labdes">Ime</label>
+            <input type="text" name="ime" [(ngModel)]="polj.ime">
+            <span>{{message[0]}}</span>
+
+        </div>
+        <div class="wrap-input">
+            <label for="prezime" class="labdes">Prezime</label>
+            <input type="text" name="prezime" [(ngModel)]="polj.prezime" >
+            <span>{{message[1]}}</span>
+
+        </div>
+        <div class="wrap-input">
+            <label for="korime" class="labdes">Korisnicko ime</label>
+            <input type="text" name="korime"  [(ngModel)]='polj.korime'>
+            <span>{{message[2]}}</span>
+
+        </div>
+        <div class="wrap-input">
+            <label for="lozinka" class="labdes">Lozinka</label>
+            <input type="password" name="lozinka"  [(ngModel)]='polj.lozinka'>
+            <span>{{message[3]}}</span>
+
+        </div>
+        <div class="wrap-input">
+            <label for="dat_rodj" class="labdes">Datum rodjenja</label>
+            <input type="date" name="dat_rodj" [(ngModel)]='polj.dat_rodj'>
+            <span>{{message[4]}}</span>
+
+        </div>
+        <div class="wrap-input">
+            <label for="mesto_rodj" class="labdes">Mesto rodjenja</label>
+            <input type="text" name="mesto_rodj" [(ngModel)]='polj.mesto_rodj'>
+            <span>{{message[5]}}</span>
+
+        </div>
+        <div class="wrap-input">
+            <label for="telefon" class="labdes">Telefon</label>
+            <input type="text" name="telefon" [(ngModel)]='polj.telefon'>
+            <span>{{message[6]}}</span>
+
+        </div>
+        <div class="wrap-input">
+            <label for="email" class="labdes">Email</label>
+            <input type="text" name="email" [(ngModel)]='polj.email'>
+            <span>{{message[7]}}</span>
+
+        </div>
+        <div class="wrap-btn">
+            <button class="menubutton" (click)='dodajPolj()'>Dodaj</button>
+
+        </div>
+    </form>
+</div>
+</div> 
+
+</div>
+<div class="limiter" *ngIf='dodPr'> 
+<div class="acont">
+<div class="wrap">
+    <span class="form-title">
+        Dodavanje preduzeca
+    </span>
+    <form name='f4' class="admin-form">
+        <div class="wrap-input">
+            <label for="naziv" class="labdes">Naziv preduzeca</label>
+            <input type="text" name="naziv" [(ngModel)]='pred.naziv'>
+            <span>{{message[0]}}</span>
+
+
+        </div>
+        <div class="wrap-input">
+            <label for="skr" class="labdes">Akronim</label>
+            <input type="text" name="skr" [(ngModel)]='pred.skr'>
+            <span>{{message[2]}}</span>
+
+        </div>
+        <div class="wrap-input">
+            <label for="lozinka" class="labdes">Lozinka</label>
+            <input type="password" name="lozinka" [(ngModel)]='pred.lozinka'>
+            <span>{{message[3]}}</span>
+
+        </div>
+        <div class="wrap-input">
+            <label for="dat_osn" class="labdes">Datum osnivanja</label>
+            <input type="date" name="dat_osn" [(ngModel)]='pred.datum_osn'>
+            <span>{{message[4]}}</span>
+
+        </div>
+        <div class="wrap-input">
+            <label for="mesto_osn" class="labdes">Mesto</label>
+            <input type="text" name="mesto_osn" [(ngModel)]='pred.mesto'>
+            <span>{{message[5]}}</span>
+
+        </div>
+
+        <div class="wrap-input">
+            <label for="email" class="labdes">Email</label>
+            <input type="text" name="email" [(ngModel)]='pred.email'>
+            <span>{{message[7]}}</span>
+
+        </div>
+        <div class="wrap-btn">
+            <button class="menubutton" (click)='dodajPreduzece()'>Dodaj</button>
+
+        </div>
+    </form>
+</div>
+</div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

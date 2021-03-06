@@ -1,0 +1,140 @@
+<div class="lim-img-back">
+    <div class="wrap-btn">
+        <button class="btn" (click)='pLoz()'>Promena lozinke</button>
+        
+        <button class="btn"  (click)='odjavljivanje()'> Izloguj se</button>
+    </div> 
+    
+    <br/>
+    <div *ngIf='!formaRas' class="poljcont">
+        <table class="table table-borderless w-auto">
+            <thead class="bravo">
+                <th>Naziv</th> <th>Broj sadnica</th> <th>Mesto</th> <th>Broj slobodnih mesta</th>
+                <th>Kolicina vode</th> <th>Temperatura</th>
+                <th></th> <th></th>
+            </thead>
+    
+            <tr class="bravo" *ngFor='let ras of rasadnici'>
+                <td class="bravo">{{ras.naziv}}</td>
+                <td class="bravo">{{ras.br_sadnica}}</td>
+                <td class="bravo">{{ras.mesto}}</td>
+                <td class="bravo">{{ras.br_slobodnih_mesta}}</td>
+                <td class="bravo">{{ras.voda}}</td>
+                <td class="bravo">{{ras.temp}}</td>
+                <td class="bravo">
+                    <div class="wrap-btn">
+                        <button class="btn"  (click)='izaberiRasadnik(ras)'>Izaberi</button>
+    
+                    </div>
+                </td>
+                <td class="bravo">
+                    <div class="wrap-btn">
+                        <button class="btn"  title="izbrisi rasadnik" (click)='izbrisiRasadnik(ras)'>Izbrisi</button>
+    
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <div class="wrap-btn">
+            <button class="btn" (click)='formaR()' title="dodaj novi rasadnik">Dodaj</button>
+    
+        </div>
+    </div>
+    <div *ngIf='formaRas' class="poljcont">
+        <div class="wrap-btn">
+            <button class="btn" (click)='natrag()' title="natrag">Natrag</button>
+    
+        </div>
+        <div class="wrap">
+            <div class="form-title"> Dodajte novi rasanik</div>
+            <form name='form3' class="pro-form">
+                <div class="wrap-input">
+                    <label class="labdes" for="naziv">
+                        Naziv
+                    </label>
+                    <input type="text" name='naziv' [(ngModel)]='rasadnik.naziv' placeholder="Unesite naziv">
+    
+                </div>
+                <div class="wrap-input">
+                    <label for="mesto" class="labdes"> Mesto </label>
+                    <input type="text" name='mesto' [(ngModel)]='rasadnik.mesto' placeholder="Unesite mesto rasadnika">
+    
+                </div>
+                         
+    
+                            <div class="wrap-input">
+                                <label for="duzina" class="labdes">  Duzina </label>
+                                <input type="text" name='duzina' [(ngModel)]='rasadnik.duzina'>
+    
+                            </div>
+                       
+                            <div class="wrap-input">
+                                <label for="sirina" class="labdes"> Sirina </label>
+                                <input type="text" name='sirina' [(ngModel)]='rasadnik.sirina'>
+    
+                            </div>
+                            
+                            
+                            <div class="wrap-input">
+                                <label for="voda" class="labdes"> Voda </label>
+                                <input type="text" name='voda' [(ngModel)]='rasadnik.voda'>
+    
+                            </div>
+                        
+                            <div class="wrap-input">
+                                <label for="temp" class="labdes">
+                                    Temperatura
+                                </label>
+                                <input type="text" name='temp'  [(ngModel)]='rasadnik.temp'>
+                            </div>
+    
+                <div class="wrap-btn">
+                    <button class="btn" title="dodaj rasadnik" (click)='dodajRasadnik()'>Potvrdi</button>
+        
+                </div>
+        
+        
+            </form>
+        </div>
+        
+    </div>
+    
+    <div *ngIf='promLoz' class="limiter">
+    
+        <div class="poljcont">
+            <div class="wrap">
+                <span class="form-title">
+                    Promena lozinke
+                </span>
+                <form name='form3' class="pro-form">
+                    <div class="wrap-input">
+                        <label class="labdes" for="slozinka">  Stara lozinka </label>
+                        <input type="password" name="slozinka" [(ngModel)]='slozinka' placeholder="Unesite staru lozinku">
+    
+                    </div>
+                               
+                     
+                    <div class="wrap-input">
+                        <label for="nlozinka" class="labdes"> Nova lozinka  </label>
+                        <input type="password" name="nlozinka" [(ngModel)]='nlozinka' placeholder="Unesite novu lozinku">
+    
+                    </div>
+                                
+                        
+                    <div class="wrap-input">
+                        <label for="pnlozinka" class="labdes"> Povoljena nova lozinka</label>
+                        <input type="password" name="pnlozinka" [(ngModel)]='pnlozinka' placeholder="Ponovo unesite novu lozinku">
+    
+                    </div>
+                    <div class="wrap-btn">
+                        <button class="btn" (click)='promeniLozinku()'>Promeni</button>
+            
+                    </div>
+                </form>
+            </div>
+        </div>
+    
+    
+    </div>
+</div>
+

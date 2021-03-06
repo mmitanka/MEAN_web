@@ -1,0 +1,67 @@
+
+
+<div class="limiter">
+    <div class="cont2">
+        <div class="wrap-btn2">
+            <button class="btn" (click)="natrag()">Natrag</button>
+        </div>
+    </div>
+
+    <div class="procont">
+
+        <div class='wrap'>
+            <div class="form-title">
+                <h3>Unesite novi proizvod</h3>
+        
+            </div>
+            <form *ngIf='ime' name="f1" class="pro-form">
+                <div class="wrap-input">
+                    <label for="ime" class="labdes">Ime proizvoda</label>
+                    <input type="text" name="ime" [(ngModel)]='proizvod.ime_sadnice'>
+                </div>
+                <div class="wrap-btn">
+                    <button (click)='proizv()'>Sledece</button>
+                </div>
+            </form>
+            <form *ngIf='pr' name="f2" class="pro-form">
+                <div class="wrap-input">
+                    <label for="proizvodjac" class="labdes">Proizvodjac</label>
+                    <input type="text" name="proizvodjac" [(ngModel)]='proizvod.proizvodjac'>
+                </div>
+                <div class="wrap-btn">
+                    <button (click)='ttip()'>Sledece</button>
+                </div>
+            </form>
+            <form *ngIf='tipp' name="f3" class="pro-form">
+                <div class="wrap-input">
+                    <label for="tip" class="labdes">Tip proizvoda</label>
+
+                    <input type="text" name="tip" [(ngModel)]='proizvod.tip' placeholder="Preparat ili sadnica">
+                </div>
+                <div class="wrap-btn">
+                    <button (click)='kolic()'>Sledece</button>
+                </div>
+            </form>
+            <form *ngIf='kol' name="f4" class="pro-form">
+                <div class="wrap-input">
+                    <label for="kolicina" class="labdes">Kolicina</label>
+
+                    <input type="text" name="kolicina" [(ngModel)]='proizvod.kolicina'>
+                </div>
+                <div class="wrap-btn">
+                    <button (click)='cenaa()'>Sledece</button>
+                </div>
+            </form>
+            <form *ngIf='ccena' name="f5" class="pro-form">
+                <div class="wrap-input">
+                    <label for="cena" class="labdes">Cena</label>
+
+                    <input type="text" name="cena" [(ngModel)]='cena' placeholder="Jedinicna cena proizvoda">
+                </div>
+                <div class="wrap-btn">
+                    <button (click)='potvrdi()'>Potvrdi</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

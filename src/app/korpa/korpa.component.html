@@ -1,0 +1,42 @@
+<div class="lim-img-back">
+    <div class="wrap-btn">
+        <button class="btn" (click)="natrag()"> Natrag</button>
+        <button class="btn" (click)='odjavljivanje()'> Izloguj se</button>
+    
+    </div>
+    
+    <div>
+        <span class="title"> 
+        Korpa korisnika {{ras.korime}} za rasadnik {{ras.naziv}} 
+    
+        </span>
+        <hr>
+        <div  class="porudzbine==null || prazno  " *ngIf="prazno">
+            <i>KORPA JE PRAZNA!</i>
+        </div>
+        <div *ngIf="!prazno" class="shopping-cart">
+            <div class="item" *ngFor='let p of porudzbine;let i=index'>
+               <div class="description">
+                 
+                    <span> Ime proizvoda: {{p.ime_sadnice}} </span>
+                    <span> Proizvodjac: {{p.proizvodjac}}  </span>
+                    
+                    <span> Tip: {{p.tip}}  </span>
+                    <span> Kolicina: {{p.kolicina}} </span>
+               </div>
+    
+                <div class="wrap-x-btn">
+                    <button class="x-btn" type="button" (click)='ukloniProizvod(i)'></button>
+    
+                </div>
+            </div>
+            <div class="wrap-btn">
+                <button class="btn" type="button" title="potvrdi porudzbinu" (click)='potvrdiPorudzbinu()'>Potvrdi</button>
+    
+            </div>
+        </div>
+
+    </div>
+</div>
+
+

@@ -1,0 +1,32 @@
+<div class="lim-img-back">
+    <div class="wrap-btn"> 
+        <button  class="btn" (click)='natrag()'>Natrag</button>
+        <button class="btn" (click)='odjavljivanje()'> Izloguj se</button>
+    </div>
+    
+    <div class="limiter">
+        <div class="web-cont">
+            <img  src="assets/slike/sadnica.jpg" alt="glupa_sadnica" height="200px" width="200px" >
+            <div class="text">
+                Ime sadnice:&nbsp;{{sad.ime_sadnice}} <br/>
+                Proizvodjac:&nbsp;{{sad.proizvodjac}}<br/>
+        
+            </div>
+            <div class="komentari">
+                <div *ngFor='let kom of komentari; let i=index;'>
+                    <i>Tekst komentara</i> <br/>
+                    {{komentari[i].komentar}} <br/>
+                    Postavio korisnik: &nbsp;{{komentari[i].korime}} <br/>
+                    Ocena:&nbsp;{{komentari[i].pocena}} <br/><br/>
+                </div>
+            </div>
+        </div>
+    
+        <div class="ocena">
+            <span *ngIf='typeErr'> Prosecna ocena</span>
+            {{sad.ocena}}
+        </div>
+    </div>
+</div>
+
+

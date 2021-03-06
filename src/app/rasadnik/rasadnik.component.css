@@ -1,0 +1,280 @@
+.milenatooltip {
+    position: relative;
+    display: inline-block;
+  }
+.milenatooltip .milenatooltiptext {
+    visibility: hidden;
+    min-width:  120px;
+    width: fit-content;
+    background-color:whitesmoke;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+  
+    /* Position the tooltip */
+    position: absolute;
+    left: 15%;
+    bottom: 80%;
+    z-index: 1;
+  }
+.milenatooltip:hover .milenatooltiptext {
+    visibility: visible;
+}
+
+
+
+.wrap-btn {
+  padding-top: 3px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+.btn {
+border: none;
+  background: transparent;
+  font-size: 15px;
+  color: #fff;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  line-height: 1.2;
+  margin-right: 3px;
+  margin-bottom: 3px;
+  display:flex;
+  justify-content: center;
+  align-items:center ;
+  padding: 0px;
+  min-width: 160px;
+  height: 42px;
+  border-radius: 6px;
+  background-color: #cefa2f;
+  position: relative;
+  z-index: 1;
+}
+.btn:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+.wrap-btn2 {
+  width: fit-content;
+  padding-top: 3px;
+  display: inline-flex;
+  float: left;
+  margin-top: 30px;
+  margin-left: 4px;
+  justify-content: center;
+  
+}
+.btn-dash{
+  background-color: #a7ce1b;
+  width: fit-content;
+}
+.btn-mag  {
+  margin-top: 50px;
+}
+.btn2 {
+border: none;
+  background: transparent;
+  font-size: 15px;
+  color: #fff;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  line-height: 1.2;
+  margin-right: 3px;
+  margin-bottom: 3px;
+  display:flex;
+  justify-content: center;
+  align-items:center ;
+  padding: 0px;
+  min-width: fit-content;
+  height: fit-content;
+  border-radius: 6px;
+  background-color: #cefa2f;
+  position: relative;
+  z-index: 1;
+}
+.btn2:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.odrzavanje {
+  
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    color: red;
+    text-transform: uppercase;
+  
+}
+.cont {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 5px ;
+  padding-right: 10px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+ img {
+   margin-right: 10px;
+   margin-top: 5px;
+ }
+.dash {    
+  width: 100%;  
+  display: inline-block;
+
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  margin: 0em;
+  position: relative;
+
+}
+.wrap {
+  display: inline;
+  border-radius: 10px;
+  overflow: hidden;
+
+  background: transparent;  
+}
+.dash-form {
+  margin-top: 20px;
+  width: fit-content;
+  display: inline-flex;
+  float: left;
+  margin-left: 20px;
+  border-radius: 10px;
+  background-color: #dcff5ff3;
+  backface-visibility: visible ;
+}
+.form-title {
+  padding-left: 80px;
+  font-size: 28px;
+  color: #aad60af3;
+  width: fit-content;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  
+  display: block;
+}
+
+.wrap-input {
+  width: 100%;
+  position: relative;
+  border-bottom: 1px solid #e4ff99;
+  padding: 20px 0;
+  opacity: 0.8;
+  backface-visibility: visible;
+}
+input {
+  
+	outline: none;
+    border: none;
+    font-size: 20px;
+    color: #555555;
+    line-height: 1.0;
+  
+    display: block;
+    width: 100%;
+    height: 40px;
+    background: transparent;
+    padding: 0 10px 0 50px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+.labdes {
+
+  display: block;
+  color:rgb(181, 206, 91);
+  text-align: center;
+  font-size: 18px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+select{
+  outline: none;
+  border: none;
+  font-size: 20px;
+  color: #555555;
+  line-height: 1.0;
+
+  display: block;
+  width: 100%;
+  height:35px;
+  background: transparent;
+  padding: 0 10px 0 50px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.labdes-2 {
+  font-size: 14px;
+}
+.magacin {
+  background-color: #8cfd4bf3;
+  opacity: 0.95;
+  display: inherit;
+  padding-top: 20px;
+  padding-right: 70px;
+
+
+}
+.title-mag {
+  background-color: #8cfd4bf3;
+  margin-left:80px ;
+  display: flex;
+  justify-content: left;
+  opacity: 0.8;
+  align-items: center;
+  border-radius: 5%;
+  text-transform: none;
+  color:rgb(58, 138, 31);
+
+}
+img {
+  opacity: 0.9;
+}
+.magacincont {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  min-height: 300px;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30px;
+  padding-top: 50px;
+ 
+}
+.wrap-mag {
+  height: fit-content;
+}
+.mag-img {
+  margin-top: 5px;
+  display: block;
+  opacity: 0.8;
+  margin-right: 10px;
+}
+.wrap-img {
+  width: 100%;
+  position: relative;
+  backface-visibility: visible ;
+}
+.lim-img-back {
+  width: 100%;
+  margin: 0 auto;
+  width: 100%;
+
+  background-image: url('/assets/slike/kukuruz.JPEG');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+
+
+
+
+
+
