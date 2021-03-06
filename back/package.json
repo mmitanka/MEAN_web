@@ -1,0 +1,28 @@
+{
+  "name": "mm170551d",
+  "version": "1.0.0",
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node server.js & start http://localhost:4000",
+    "dev": "babel-watch server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.9.6",
+    "babel-watch": "^7.0.0",
+    "nodemon": "^2.0.3"
+  },
+  "dependencies": {
+    "chokidar": "^3.4.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.10",
+    "nodemailer": "^6.4.10"
+  }
+}
